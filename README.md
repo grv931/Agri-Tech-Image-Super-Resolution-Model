@@ -9,16 +9,16 @@ The model reconstructs critical high-frequency biological textures—such as lea
 ## 🛠️ Core Constraints & Specifications
 
 - **Architectural Constraints**: The networks are initialized completely at random. The use of pre-trained weights for the core generator/discriminator architectures is strictly prohibited to ensure authentic texture learning.
-- **Leaderboard Evaluation Metric**: Models are evaluated using pixel-by-pixel Mean Absolute Error (MAE) across the three RGB channels[cite: 1]. This minimization metric strictly penalizes spatial inaccuracies, preventing the network from generating realistic but hallucinated symptoms in the wrong coordinates[cite: 1].
-- **Environment**: Configured to run entirely offline with internet access disabled and zero external data dependencies[cite: 1].
+- **Leaderboard Evaluation Metric**: Models are evaluated using pixel-by-pixel Mean Absolute Error (MAE) across the three RGB channels. This minimization metric strictly penalizes spatial inaccuracies, preventing the network from generating realistic but hallucinated symptoms in the wrong coordinates.
+- **Environment**: Configured to run entirely offline with internet access disabled and zero external data dependencies.
 
 ---
 
 ## 📐 Loss Functions
 
-To optimize both visual realism and structural fidelity, the training framework utilizes a multi-component loss strategy[cite: 1]:
-1. **Adversarial & Perceptual Losses**: Trains the GAN to synthesize highly realistic textures[cite: 1]. Perceptual loss is computed locally utilizing provided offline VGG-19 weights (`vgg19_weights.pth`)[cite: 1].
-2. **Mean Absolute Error (MAE)**: Minimizes the absolute difference between predicted and ground-truth pixel intensities to secure strict spatial accuracy[cite: 1].
+To optimize both visual realism and structural fidelity, the training framework utilizes a multi-component loss strategy:
+1. **Adversarial & Perceptual Losses**: Trains the GAN to synthesize highly realistic textures. Perceptual loss is computed locally utilizing provided offline VGG-19 weights (`vgg19_weights.pth`).
+2. **Mean Absolute Error (MAE)**: Minimizes the absolute difference between predicted and ground-truth pixel intensities to secure strict spatial accuracy.
 
 ---
 
